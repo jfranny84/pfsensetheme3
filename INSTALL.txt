@@ -1,0 +1,232 @@
+PFSENSE THEME AND LOGIN INSTALLATION GUIDE
+Silver, Gray & Neon Red
+
+Copyright © 2026 pfSense-Silver-Gray-Neon-Red Theme Created By Josh Frandsen / RestoreMyPC.Net. All Rights Reserved.
+Attribution covers the custom design modifications, not pfSense software
+or the underlying pfSense logo artwork.
+
+1. UPDATE PFSENSE BEFORE INSTALLING
+
+Recommended: update to the current stable release supported for your pfSense
+edition and hardware BEFORE installing these custom files. Use System >
+Update and follow Netgate's upgrade instructions for your installation.
+Back up first, complete the update/reboot, and confirm normal operation.
+
+Installing the theme AFTER the update avoids having that update immediately
+replace your customization. It does NOT prevent future upgrades, repairs,
+or reinstalls from overwriting custom files. Keep this package on your PC
+and check/reapply compatible custom files after later upgrades.
+Do not make system files immutable or block updates to preserve the theme.
+
+2. BACK UP THE ORIGINAL FILES
+
+Download a configuration backup from Diagnostics > Backup & Restore.
+Also copy the original login.css and logo files to your PC separately.
+A normal configuration XML backup does not include custom system files.
+Record the currently selected theme and the original logo paths.
+
+This package targets the classic Bootstrap-based pfSense WebGUI.
+It has not been verified on your firewall or against every pfSense release.
+
+3. PACKAGE FILES AND DESTINATIONS
+
+Included file: pfSense-Silver-Gray-Neon-Red.css
+Destination: /usr/local/www/css/pfSense-Silver-Gray-Neon-Red.css
+
+Included file: login.css
+Destination: /usr/local/www/css/login.css
+
+Included file: logo.svg
+Destination: the existing SVG asset actually used by your installed version.
+Confirm its exact location before replacing it (see step 6).
+
+The filenames above are the install-ready names in this package. Do not use
+browser download suffixes such as (3) or (4) on the destination filenames.
+
+4. TRANSFER THE FILES
+
+Use an authenticated file-transfer method supported by your firewall,
+such as an SCP-capable client with SSH access enabled for a permitted
+administrator on the trusted management network.
+
+In a file-transfer client, browse to /usr/local/www/css/ and upload the
+included theme CSS. Back up the existing login.css before replacing it.
+Preserve the ownership and readable file permissions used by the existing
+web files. Do not give files world-write permissions.
+
+IMPORTANT: the theme imports the original pfSense.css. Keep the stock
+/usr/local/www/css/pfSense.css intact. Do not rename this theme to pfSense.css.
+No firewall rules or network configuration need to be changed for the theme.
+
+5. SELECT THE THEME
+
+Open System > General Setup and find the webConfigurator Theme setting.
+Select pfSense-Silver-Gray-Neon-Red (the label may appear with spaces), then
+save. If your user account has a theme override, select the same theme in
+that user's preferences or remove the override.
+
+If the uploaded theme is not listed, check the filename and file location.
+Your release may handle theme discovery differently; do not overwrite the
+stock stylesheet or edit PHP files as a workaround without checking that
+release's behavior.
+
+Hard-refresh your browser (Ctrl+F5 on Windows) to load the new CSS.
+
+6. INSTALL THE MATCHING LOGO
+
+The logo asset name and location can differ by release and edition.
+Use your browser's developer tools to inspect the logo or the page source.
+Check the referenced SVG or the SVG loaded inline by the page. The installed
+/css/logo.css may also help locate the asset, but is not always its source.
+
+Identify that asset under /usr/local/www/, download a backup, and replace
+only that confirmed SVG with the included logo.svg. Use the original asset's
+filename at its destination. Uploading logo.svg to an arbitrary directory
+will not automatically make pfSense use it.
+
+If the login page and WebGUI reference different SVG assets, back up each
+and install the neon red and silver logo at each confirmed location. Keep the original
+logo geometry; this file provides the matching color treatment.
+
+7. CHECK THE LOGIN PAGE AND COPYRIGHT
+
+Open a private/incognito browser window to view the login page while keeping
+your existing administrator session open. Confirm that the username and
+password fields, login button, logo, and footer appear correctly.
+
+Check dashboard widgets, navigation menus, tabs, tables, forms, and narrow
+browser windows. No reboot is normally needed for CSS or SVG changes.
+
+The CSS files display the following design credit in their existing footer:
+Copyright © 2026 pfSense-Silver-Gray-Neon-Red Theme Created By
+Josh Frandsen / RestoreMyPC.Net. All Rights Reserved.
+
+The logo credits Josh Frandsen / RestoreMyPC.Net in SVG metadata and a
+source comment.
+The original pfSense artwork and any upstream notices remain separate.
+
+8. RESTORE THE ORIGINAL LOOK
+
+Select the original theme in System > General Setup and restore any user
+theme preference. Restore your backed-up login.css and the original SVG
+assets, then hard-refresh the browser. If the WebGUI cannot be used, restore
+those files through your permitted management file-transfer/console access.
+
+9. AFTER FUTURE UPDATES
+
+Confirm the stock interface works after updating. Check the theme, login,
+and logo before reapplying these files. If the WebGUI layout or asset paths
+changed, adapt the custom files to the new version first.
+Keep both the original backups and this install package off the firewall.
+
+OFFICIAL REFERENCE DOCUMENTATION
+https://docs.netgate.com/pfsense/en/latest/install/upgrade-guide.html
+https://docs.netgate.com/pfsense/en/latest/install/upgrade-guide-prepare.html
+https://docs.netgate.com/pfsense/en/latest/backup/index.html
+
+VERSION 2.0 CHANGES
+The top navigation now uses stock pfSense dimensions and positioning.
+Removed custom link margins, padding, borders and font-weight changes.
+Circuit graphics, metallic backgrounds and inset neon edges do not alter
+the box size when links are hovered, focused or opened. Dropdowns retain
+stock behavior; expanding the mobile hamburger still reveals its menu.
+Use pfSense's Top Navigation setting for fixed versus scrolling behavior.
+
+The wrench, minus-circle and times-circle controls use crimson at rest
+and brighter neon red on hover or keyboard focus. The misspelling
+fa-time-circle is supported as an alias for Font Awesome's fa-times-circle.
+The supplied logo uses full-opacity neon gradients, a bright edge and
+a shared two-scale SVG glow. CSS avoids flattening its gradient fills.
+
+Replace all three matching assets from this package and hard-refresh.
+CSS rules were consolidated rather than layering additional overrides.
+Classic WebGUI compatibility still depends on the installed release and
+package markup. Not verified on a live firewall.
+
+VERSION 2.1 CHANGES
+Menu lower edge, tab strip and breadcrumb bar now use coordinated silver
+graphics and neon red accent lines without changing their dimensions.
+Buttons have a beveled metallic face, diagonal highlights and inset edges.
+The login button matches. Logo gradients are more saturated, the edge is
+sharper and the glow is reduced to improve readability on silver surfaces.
+Replace all three matching assets and hard-refresh (Ctrl+F5).
+
+VERSION 2.2 CHANGE
+Top menu now uses one solid silver-gray (#c4c6cc) across the full bar,
+including link hover/open states and the collapsed menu. No menu gradients,
+circuit texture or inset edge stripes. Stock layout dimensions are preserved.
+Replace the theme CSS and hard-refresh (Ctrl+F5).
+
+VERSION 2.3 CHANGES
+The solid silver-gray top menu now has graphical graphite button faces on
+hover, keyboard focus, active selection and open dropdowns. Bevels, angled
+highlights and neon red lower edges do not change menu dimensions.
+All panel headings use a distinct dark brushed-metal surface with circuit
+details and neon red accents. Header titles are silver-white and widget
+controls bright red for contrast. The matching login and logo are included.
+Replace the theme CSS, then hard-refresh (Ctrl+F5).
+
+VERSION 2.4 CHANGES
+The menu uses a pale silver bevel matching the shape of its brighter
+steel-gray hover face. Panel headers use brighter brushed silver-steel
+graphics and dark readable titles, with coordinated neon red accents.
+The login header uses the same pale silver treatment. Menu dimensions
+are unchanged. Replace theme/login CSS and hard-refresh (Ctrl+F5).
+
+VERSION 2.5 CHANGES
+Top menu labels are bold in all states. Dropdown top margin is zero,
+desktop dropdowns begin at the bottom of their parent, and open button
+corners meet the dropdown without a rounded notch. Mobile collapse behavior
+is preserved. Panel headings now use a clean beveled metallic finish with
+no circuit or line texture. Duplicate CSS selectors and declarations were
+consolidated, formatting cleaned up, and print styles corrected.
+Replace the theme CSS and hard-refresh (Ctrl+F5).
+
+VERSION 2.6 CHANGE
+Removed the lower menu rail and button underline. Removed the dropdown top
+border and padding so its menu meets the button directly. Replace the theme
+CSS and hard-refresh (Ctrl+F5).
+
+VERSION 2.7 CHANGE
+Larger top-menu buttons use more padding and 15px bold labels on wide
+screens, with compact spacing at intermediate widths. Hover, focus and open
+states have a stronger rose-red metallic tint and neon side lighting.
+Hover does not change button size; dropdowns retain their direct connection.
+Replace theme CSS and hard-refresh (Ctrl+F5).
+
+VERSION 2.8 CHANGE
+Top menu uses a cleaner silver finish with soft gray hover shading and a
+muted red side accent. Removed diagonal highlights, pink fill and hover
+glow. Larger bold buttons and directly attached dropdowns are retained.
+Replace the theme CSS and hard-refresh (Ctrl+F5).
+
+VERSION 2.9 CHANGE
+Added faint graphite circuit lines, small muted-red nodes and a fine
+brushed-metal texture to the top menu. The soft gray hover remains subtle.
+Replace the theme CSS and hard-refresh (Ctrl+F5).
+
+VERSION 3.0 CHANGE
+Top menu now uses machined diagonal metal inlays and fine horizontal grain
+instead of the circuit graphics used on the page background. The silver-gray
+palette, subtle hover and muted red accent are preserved.
+Replace the theme CSS and hard-refresh (Ctrl+F5).
+
+VERSION 3.1 CHANGE
+The top menu now shares the page's neutral silver and gray palette with a
+fine metallic finish. Transparent resting buttons blend into the bar;
+soft gray hover and a muted red accent coordinate with the theme.
+The login header matches. Replace both CSS files and hard-refresh (Ctrl+F5).
+
+VERSION 3.2 CHANGE
+Logo now has crisp red metallic lettering, a silver emblem segment, thin
+contrast edging and a small relief shadow. Broad glow and CSS gradient-stop
+overrides were removed for clearer rendering at menu size. Original path
+geometry and viewBox remain intact. Replace logo.svg at its confirmed asset
+location and replace both CSS files, then hard-refresh (Ctrl+F5).
+
+VERSION 3.3 CHANGE
+Login form now centers in the available space inside #total, with Bootstrap
+form-column constraints removed. The original pfSense credit and the custom
+Josh Frandsen / RestoreMyPC.Net copyright remain in the footer at the bottom
+of short pages and below the form on small screens. Replace login.css and
+hard-refresh (Ctrl+F5). Silver-gray and neon red styling is preserved.

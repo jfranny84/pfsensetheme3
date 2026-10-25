@@ -1,0 +1,334 @@
+/* Copyright © 2026 pfSense-Silver-Gray-Neon-Red Theme Created By Josh Frandsen / RestoreMyPC.Net. All Rights Reserved.
+ * Matching replacement login stylesheet, v3.3.
+ */
+
+@import url("/css/logo.css");
+
+:root {
+  --nr-ink: #303238;
+  --nr-muted: #62666e;
+  --nr-surface: #fafafa;
+  --nr-line: #b6b8c0;
+  --nr-red: #b50e2b;
+  --nr-neon: #ff244b;
+  --nr-dark-red: #81081e;
+  --nr-circuit: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22720%22%20height%3D%22480%22%20viewBox%3D%220%200%20720%20480%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ff244b%22%20stroke-width%3D%221.4%22%20opacity%3D%22.13%22%3E%3Cpath%20d%3D%22M0%2064h110l42%2042h130l42-42h170l40%2040h186M0%20240h70l55-55h160l50%2050h170l50-50h165M0%20390h160l45-45h145l48%2048h130l48-48h144M110%200v64m172%2042v80m212-122V0M125%20185v110l-50%2050v135m260-245v110m193%2048v87M555%20185V90l65-65V0%22%2F%3E%3Crect%20x%3D%22306%22%20y%3D%22207%22%20width%3D%2258%22%20height%3D%2256%22%20rx%3D%225%22%2F%3E%3Cpath%20d%3D%22M318%20207v-14m12%2014v-14m12%2014v-14m12%2014v-14M318%20263v14m12-14v14m12-14v14m12-14v14M306%20220h-14m14%2012h-14m14%2012h-14M364%20220h14m-14%2012h14m-14%2012h14%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%2264%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22282%22%20cy%3D%22106%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22125%22%20cy%3D%22185%22%20r%3D%224%22%2F%3E%3Ccircle%20cx%3D%22528%22%20cy%3D%22393%22%20r%3D%224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --nr-menu-circuit: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22480%22%20height%3D%2250%22%20viewBox%3D%220%200%20480%2050%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ff244b%22%20opacity%3D%22.32%22%20stroke-width%3D%221%22%3E%3Cpath%20d%3D%22M0%2011h74l12%2012h86l12-12h110l12%2012h110l12-12h52M0%2039h112l12-12h110l12%2012h112l12-12h110M74%2011V0m110%2011V0m122%2023v27m110-27V0%22%2F%3E%3Ccircle%20cx%3D%2274%22%20cy%3D%2211%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%22172%22%20cy%3D%2223%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%22306%22%20cy%3D%2223%22%20r%3D%222.5%22%2F%3E%3Ccircle%20cx%3D%22358%22%20cy%3D%2239%22%20r%3D%222.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+}
+
+body {
+  color: var(--nr-ink);
+  background-color: #d6d7db;
+  background-image: radial-gradient(ellipse at 50% 20%, #ffffffcc, transparent 70%),
+    radial-gradient(ellipse at 100% 0%, #ff244b17, transparent 65%),
+    var(--nr-circuit), linear-gradient(135deg, #eeeeef, #c9cbd0);
+  background-size: 100% 100%, 100% 100%, 900px 600px, 100% 100%;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: center, center, center top, center;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a, .btn-link {
+  color: var(--nr-red);
+
+}
+
+a:hover, a:focus {
+  color: var(--nr-dark-red);
+
+}
+
+:focus-visible {
+  outline: 2px solid var(--nr-red);
+  outline-offset: 3px;
+
+}
+
+::selection {
+  color: #fff;
+  background: #a40c29;
+
+}
+
+html {
+  min-height: 100%;
+
+}
+
+#headerrow {
+  position: relative;
+  flex: none;
+  min-height: 90px;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--nr-ink);
+  z-index: 10;
+  background-color: #d6d7db;
+  background-image: repeating-linear-gradient(0deg, #ffffff12 0 1px, transparent 1px 3px), linear-gradient(180deg, #eeeeef 0%, #d6d7db 48%, #c9cbd0 100%);
+  background-size: auto;
+  background-repeat: repeat, no-repeat;
+  box-shadow: inset 0 1px 0 #fafafa, inset 0 -2px 0 #b50e2b;
+}
+
+#total > .pagebody, #total > .pagebodywarn, #total > .pagebody2 {
+  position: relative;
+  flex: 1 0 auto;
+  width: 100%;
+  color: var(--nr-ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 32px 16px;
+  background: transparent !important;
+}
+
+.nowarning {
+  min-height: 80px;
+  padding-top: 10px;
+  box-sizing: border-box;
+
+}
+
+#hostspan {
+  text-align: right;
+  color: var(--nr-ink);
+
+}
+
+.msgbox {
+  padding: 25px 60px 0 0;
+
+}
+
+.loginCont {
+  max-width: 420px;
+  padding: 36px;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #fafafa, #dedfe3);
+  border: 1px solid #a5a8b0;
+  border-top: 4px solid var(--nr-neon);
+  border-radius: 16px;
+  box-shadow: 0 20px 55px #282a3430, 0 0 22px #ff244b15;
+  width: 100%;
+  margin: 0 auto;
+}
+
+p.form-title {
+  font: 600 25px "Segoe UI", Arial, sans-serif;
+  text-align: center;
+  color: var(--nr-ink);
+  margin: 0 0 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+form.login {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+
+}
+
+form.login input[type="text"], form.login input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 10px 0 20px;
+  padding: 14px 15px;
+  color: var(--nr-ink);
+  background: #fafafa;
+  border: 1px solid #a5a8b0;
+  border-radius: 7px;
+  font: inherit;
+
+}
+
+form.login input::placeholder {
+  color: #666b75;
+  opacity: 1;
+
+}
+
+form.login input:focus, form.login button:focus-visible {
+  border-color: var(--nr-red);
+  outline: 2px solid var(--nr-red);
+  outline-offset: 2px;
+
+}
+
+form.login input[type="submit"], form.login button[type="submit"] {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 22px 0 0;
+  padding: 14px;
+  color: #fff;
+  background: linear-gradient(#d5193c, #a20c28);
+  border: 1px solid #940a23;
+  border-radius: 7px;
+  font: 600 15px "Segoe UI", Arial, sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: linear-gradient(120deg, transparent 0 70%, #ffffff13 70% 72%, transparent 72% 80%, #ffffff0a 80% 82%, transparent 82%), linear-gradient(180deg, #ee2448 0%, #cb1134 48%, #b90c2c 49%, #94051f 100%);
+  box-shadow: inset 0 1px 0 #ff8298, inset 0 -2px 0 #7f071e, 0 3px 8px #30323830;
+  text-shadow: 0 1px 1px #70051c;
+
+}
+
+form.login input[type="submit"]:hover, form.login button[type="submit"]:hover {
+  background: linear-gradient(#b20f2e, #80081e);
+
+}
+
+form.login label, form.login a {
+  font-size: 12px;
+  font-weight: 400;
+
+}
+
+form.login label, .logoCol {
+  color: var(--nr-ink);
+
+}
+
+form.login a, .error-panel a {
+  color: var(--nr-red);
+
+}
+
+form.login a:hover, .error-panel a:hover {
+  color: var(--nr-dark-red);
+
+}
+
+#footertext {
+  width: 100%;
+  min-height: 52px;
+  box-sizing: border-box;
+  color: var(--nr-ink);
+  background: linear-gradient(90deg, #eeeef2, #d1d4dc, #eeeef2);
+  box-shadow: inset 0 2px 0 var(--nr-neon);
+  text-align: center;
+  overflow-wrap: anywhere;
+  position: static;
+  padding: 12px 16px;
+}
+
+#footertext .text-muted {
+  color: var(--nr-muted);
+
+}
+
+#footertext p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+#footertext::after {
+  display: block;
+  font-size: 12px;
+  content: "Copyright © 2026 pfSense-Silver-Gray-Neon-Red Theme\A Created By Josh Frandsen / RestoreMyPC.Net. All Rights Reserved.";
+  margin: 6px auto 0;
+  padding: 6px 0 0;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.logoCol {
+  height: auto;
+}
+
+#logodiv svg#logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: none;
+}
+
+/* Inline style fills in the supplied SVG retain their neon gradients. */
+
+#logodiv svg#logo .logo-st0:not([style*="url("]), #logodiv svg#logo .logo-st1:not([style*="url("]) {
+  fill: #ff1748;
+
+}
+
+#logodiv svg#logo .logo-st2:not([style*="url("]) {
+  fill: #d6d7df;
+
+}
+
+form.login input:-webkit-autofill {
+  -webkit-text-fill-color: var(--nr-ink);
+  box-shadow: 0 0 0 1000px #fafafa inset;
+
+}
+
+@media (max-width: 768px) {
+  .nowarning {
+    min-height: 60px;
+
+  }
+  .msgbox {
+    padding: 0;
+
+  }
+  #hostspan {
+    text-align: center;
+
+  }
+
+  
+}
+
+@media (max-width: 480px) {
+  .loginCont {
+    padding: 25px;
+
+  }
+}
+
+/* Full-height layout belongs to pfSense's #total wrapper. */
+#total {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+}
+#total > header { flex: 0 0 auto; }
+#headerrow > .row { margin-left: 0; margin-right: 0; }
+#total > footer {
+  position: static;
+  flex: 0 0 auto;
+  clear: both;
+  width: 100%;
+  margin-top: auto;
+  padding: 0;
+}
+/* Release the form from Bootstrap's narrow floated column. */
+#total > .pagebody > [class*="col-"],
+#total > .pagebodywarn > [class*="col-"],
+#total > .pagebody2 > [class*="col-"] {
+  float: none;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+#total > .pagebody > [class*="col-"]:empty,
+#total > .pagebodywarn > [class*="col-"]:empty,
+#total > .pagebody2 > [class*="col-"]:empty { display: none; }
+@media (max-width: 768px) {
+  #total > .pagebody, #total > .pagebodywarn, #total > .pagebody2 { padding: 24px 16px; }
+}
